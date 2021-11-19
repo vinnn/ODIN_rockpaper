@@ -1,7 +1,7 @@
 
 
 function computerPlay() {
-    let random_number = Math.round(Math.random() * 2);
+    let random_number = Math.floor(Math.random() * 2.99);
 
     if (random_number == 0) {
         return "rock";
@@ -43,8 +43,50 @@ let roundResult = playRound(playerSelection,computerSelection);
 
 console.log("Player selection is : " + playerSelection);
 console.log("Computer selection is : " + computerSelection);
-
 console.log("The result is : " + roundResult);
 
+
+
+
+function playerPlay() {
+
+    let prompt_capture = window.prompt(`Please enter your selection ("rock", "paper", or "scissors")`, `rock`);
+
+    let prompt_capture_lowerc = prompt_capture.toLowerCase();
+
+    if (prompt_capture_lowerc == "rock" || prompt_capture_lowerc == "paper" ||prompt_capture_lowerc == "scissors") {
+        return prompt_capture_lowerc;
+    } else {
+        window.alert("Selection not properly entered. Please re-enter.");
+        return "none";
+    }
+
+}
+
+
+
+
+
+function game() {
+
+    for (let i = 1; i < 6; i++) {
+
+        let playerSelection = "none";
+        while (playerSelection == "none") {
+            playerSelection = playerPlay();
+        }
+
+        let computerSelection = computerPlay();
+        let roundResult = playRound(playerSelection,computerSelection);
+
+        console.log("Round No." + i + " - Player selection is : " + playerSelection);
+        console.log("Round No." + i + " - Computer selection is : " + computerSelection);
+        console.log("Round No." + i + " - The result is : " + roundResult);
+
+    }
+
+}
+
+game()
 
 
