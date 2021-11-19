@@ -37,16 +37,6 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-let playerSelection = "Rock";
-let computerSelection = computerPlay();
-let roundResult = playRound(playerSelection,computerSelection);
-
-console.log("Player selection is : " + playerSelection);
-console.log("Computer selection is : " + computerSelection);
-console.log("The result is : " + roundResult);
-
-
-
 
 function playerPlay() {
 
@@ -65,7 +55,8 @@ function playerPlay() {
 
 
 
-
+let number_of_player_win = 0;
+let number_of_computer_win = 0;
 
 function game() {
 
@@ -79,11 +70,23 @@ function game() {
         let computerSelection = computerPlay();
         let roundResult = playRound(playerSelection,computerSelection);
 
+        if (roundResult == "You win!") {
+            number_of_player_win += 1;
+        } else if (roundResult == "You lose!") {
+            number_of_computer_win += 1;
+        }
+
         console.log("Round No." + i + " - Player selection is : " + playerSelection);
         console.log("Round No." + i + " - Computer selection is : " + computerSelection);
         console.log("Round No." + i + " - The result is : " + roundResult);
 
     }
+
+    let final_winner = (number_of_player_win == number_of_computer_win) ? "Neither the Player or the Computer..." : (number_of_player_win > number_of_computer_win) ? "Player!" : "Computer!";
+    
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+    console.log("The final winner is the " + final_winner);
+    console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
 
 }
 
