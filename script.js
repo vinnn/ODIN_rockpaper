@@ -1,5 +1,4 @@
-
-
+// Computer selection (random)
 function computerPlay() {
     let random_number = Math.floor(Math.random() * 2.99);
 
@@ -10,11 +9,29 @@ function computerPlay() {
     } else {
         return "scissors";
     }
+}
 
+// Player's selection.
+// Prompt the user to input its selection,
+// returns "none" if entry not valid.
+function playerPlay() {
+
+    let prompt_capture = window.prompt(`Please enter your selection ("rock", "paper", or "scissors")`, `rock`);
+
+    let prompt_capture_lowerc = prompt_capture.toLowerCase();
+
+    if (prompt_capture_lowerc == "rock" || prompt_capture_lowerc == "paper" ||prompt_capture_lowerc == "scissors") {
+        return prompt_capture_lowerc;
+    } else {
+        window.alert("Selection not properly entered. Please re-enter.");
+        return "none";
+    }
 }
 
 
-
+// One round:
+// Determines win, lose or tie 
+// base on the player selection and the computer selection.
 function playRound(playerSelection, computerSelection) {
     
     let playerSelection_lowerc = playerSelection.toLowerCase();
@@ -38,23 +55,12 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-function playerPlay() {
-
-    let prompt_capture = window.prompt(`Please enter your selection ("rock", "paper", or "scissors")`, `rock`);
-
-    let prompt_capture_lowerc = prompt_capture.toLowerCase();
-
-    if (prompt_capture_lowerc == "rock" || prompt_capture_lowerc == "paper" ||prompt_capture_lowerc == "scissors") {
-        return prompt_capture_lowerc;
-    } else {
-        window.alert("Selection not properly entered. Please re-enter.");
-        return "none";
-    }
-
-}
 
 
 
+// Game of 5 rounds 
+// if Player selection is "none" (invalid user entry) then re-call PlayerPlay 
+// Increment record of player and computer wins for calcualtion of final winner
 let number_of_player_win = 0;
 let number_of_computer_win = 0;
 
@@ -76,13 +82,10 @@ function game() {
             number_of_computer_win += 1;
         }
 
-        console.log("Round No." + i + " - Player selection is : " + playerSelection);
-        console.log("Round No." + i + " - Computer selection is : " + computerSelection);
-        console.log("Round No." + i + " - The result is : " + roundResult);
-
+        console.log("Round No." + i + " - You: " + playerSelection + " vs Computer: " + computerSelection + "      => result " + roundResult);
     }
 
-    let final_winner = (number_of_player_win == number_of_computer_win) ? "Neither the Player or the Computer..." : (number_of_player_win > number_of_computer_win) ? "Player!" : "Computer!";
+    let final_winner = (number_of_player_win == number_of_computer_win) ? "Neither the Player nor the Computer..." : (number_of_player_win > number_of_computer_win) ? "Player!" : "Computer!";
     
     console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     console.log("The final winner is the " + final_winner);
@@ -90,6 +93,7 @@ function game() {
 
 }
 
+// Call to run the game
 game()
 
 
