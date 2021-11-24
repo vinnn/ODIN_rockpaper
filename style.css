@@ -1,0 +1,128 @@
+h1 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 16px;
+}
+/* %%%%%%%%%%%%%%%%%%%% */
+/* SECTION %% HEADER %% */
+/* %%%%%%%%%%%%%%%%%%%% */
+.header {
+    text-align: center;
+    border-style: solid;
+}
+
+
+
+
+
+/* %%%%%%%%%%%%%%%%%%%%% */
+/* SECTION %%% ROUND %%% */
+/* %%%%%%%%%%%%%%%%%%%%% */
+.ctn-round {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+
+/* %%%%%%%%%%%%%%%%%%%%% */
+/* SECTION %%% MAIN %%% */
+/* %%%%%%%%%%%%%%%%%%%%% */
+.ctn-main {
+    display: flex;
+    flex-direction: row;
+
+    gap: 24px;
+    border-style: solid;
+    text-align: center;
+}
+
+
+.ctn-user {
+    flex: 1.5;
+}
+.ctn-user-cont {
+    display: flex;
+}
+.ctn-btns {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+.ctn-user-choice {
+    flex: 1;
+    margin: auto;
+}
+
+
+.ctn-computer {
+    flex: 1;
+}
+.ctn-computer-choice {
+    flex: 1 1 0;
+    min-height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ctn-result {
+    flex: 1;
+}
+.result {
+    flex: 1;
+
+    min-height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+/* %%%%%%%%%%%%%%%%%%%% */
+/* SECTION %%% GAME %%% */
+/* %%%%%%%%%%%%%%%%%%%% */
+
+.ctn-game-results {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+
+
+.ctn-result-titles {
+    flex: 1.5;
+    border-style: solid;
+    border-color: red;
+}
+
+
+
+.ctn-result-scores {
+    flex: 1;
+    border-style: solid;
+    border-color: red;
+
+    text-align: center;
+}
+
+.final-result {
+
+    flex: 1;
+    border-style: solid;
+    border-color: red;
+}
+
